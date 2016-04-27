@@ -18,9 +18,17 @@ $UrlRouterProvider.$inject = ['$locationProvider', '$urlMatcherFactoryProvider']
 function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
   var rules = [], otherwise = null, interceptDeferred = false, listener;
 
-  this.init = function () {
+  this.init = function() {
+    this.initRules();
+    this.initOtherwise();
+  };
+
+  this.initRules = function() {
     rules = [];
-    otherwise = null;
+  };
+
+  this.initOtherwise = function() {
+    this.otherwise = null;
   };
 
   // Returns a string that is a prefix of all strings matching the RegExp
