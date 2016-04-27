@@ -24,6 +24,11 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
 
   var root, states = {}, $state, queue = {}, abstractKey = 'abstract';
 
+  this.init = function () {
+    states = {};
+    queue = {};
+  };
+  
   // Builds state properties from definition passed to registerState()
   var stateBuilder = {
 
